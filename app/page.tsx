@@ -42,23 +42,23 @@ export default function Home() {
           <h3 className="text-white mt-2 text-center md:text-2xl text-lg font-semibold leading-8">
             The universal operating system for real estate.
           </h3>
-          <h4 className="mt-10 mb-4 text-white text-base leading-6 font-semibold text-center">
+          {/* <h4 className="mt-10 mb-4 text-white text-base leading-6 font-semibold text-center">
             Join the waitlist for early access
           </h4>
-          <SubscribeForm />
+          <SubscribeForm /> */}
           <div className="mt-10 flex items-center gap-6 py-3 px-4 rounded-xl bg-white/20 backdrop-blur-lg">
             <button>
               <a href="https://x.com/arda_global" target="_blank">
                 <Icons.Twitter className="!w-full !h-full" />
               </a>
             </button>
-{/*             <Button
+            {/*             <Button
               disabled
               className="w-6 h-6 p-0 bg-transparent hover:bg-transparent"
             >
               <Icons.Facebook className="!w-full !h-full" />
             </Button> */}
-{/*              <Button
+            {/*              <Button
                disabled
               className="w-6 h-6 p-0 bg-transparent hover:bg-transparent"
             >
@@ -67,14 +67,15 @@ export default function Home() {
               </a>
              
             </Button> */}
-            <Button
-              className="w-6 h-6 p-0 bg-transparent hover:bg-transparent"
-            > 
-              <a href="https://www.linkedin.com/company/arda-realestates" target="_blank">
+            <Button className="w-6 h-6 p-0 bg-transparent hover:bg-transparent">
+              <a
+                href="https://www.linkedin.com/company/arda-realestates"
+                target="_blank"
+              >
                 <Icons.Linkedin className="!w-full !h-full" />
               </a>
             </Button>
-{/*             <Button
+            {/*             <Button
               disabled
               className="w-6 h-6 p-0 bg-transparent hover:bg-transparent"
             >
