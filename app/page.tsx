@@ -1,6 +1,6 @@
 import HomePageCarousel from "@/components/home-page-carousel";
 import Icons from "@/components/icons";
-import { SubscribeForm } from "@/components/subscribeForm";
+// import { SubscribeForm } from "@/components/subscribeForm";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
