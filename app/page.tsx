@@ -33,7 +33,7 @@ export default function Home() {
       <div className="absolute bg-transparent top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="flex flex-col items-center">
           <Image
-            src="/arda-logo-2.svg"
+            src="/arda-homepage/arda-logo-2.svg"
             alt="Arda Logo"
             width={409}
             height={120}
