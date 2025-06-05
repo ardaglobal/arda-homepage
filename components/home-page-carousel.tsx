@@ -25,16 +25,16 @@ export default function HomePageCarousel() {
     >
       <CarouselContent className="ml-0 h-screen">
         <CarouselItem className="h-full pl-0">
-          <div className="h-full bg-[url(/arda-homepage/dubai.jpg)] bg-cover bg-center" />
+          <div className="h-full bg-[url(/dubai.jpg)] bg-cover bg-center" />
         </CarouselItem>
         <CarouselItem className="h-full pl-0">
-          <div className="h-full bg-[url(/arda-homepage/hongkong.jpg)] bg-cover bg-center" />
+          <div className="h-full bg-[url(/hongkong.jpg)] bg-cover bg-center" />
         </CarouselItem>
         <CarouselItem className="h-full pl-0">
-          <div className="h-full bg-[url(/arda-homepage/newyork.jpg)] bg-cover bg-center" />
+          <div className="h-full bg-[url(/newyork.jpg)] bg-cover bg-center" />
         </CarouselItem>
         <CarouselItem className="h-full pl-0">
-          <div className="h-full bg-[url(/arda-homepage/london.jpg)] bg-cover bg-center" />
+          <div className="h-full bg-[url(/london.jpg)] bg-cover bg-center" />
         </CarouselItem>
       </CarouselContent>
     </Carousel>
