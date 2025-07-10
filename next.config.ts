@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/arda-homepage",
+  basePath: process.env.NODE_ENV === "production" ? "/arda-homepage" : "",
 };
 
 export default nextConfig;
