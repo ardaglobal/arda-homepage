@@ -40,7 +40,7 @@ export default function Home() {
             priority
           />
           <h3 className="text-white mt-2 text-center md:text-2xl text-lg font-semibold leading-8">
-            The universal operating system for real estate.
+            Reprogramming Private Markets
           </h3>
           {/* <h4 className="mt-10 mb-4 text-white text-base leading-6 font-semibold text-center">
             Join the waitlist for early access
