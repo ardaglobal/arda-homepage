@@ -4,28 +4,6 @@ import Icons from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-export const metadata = {
-  title: "ARDA",
-  description: "The universal operating system for real estate.",
-  openGraph: {
-    title: "ARDA",
-    description: "The universal operating system for real estate.",
-    images: [
-      {
-        url: "/arda.svg",
-        width: 200,
-        height: 80,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "ARDA",
-    description: "The universal operating system for real estate.",
-    images: ["/arda.svg"],
-  },
-};
-
 export default function Home() {
   return (
     <>
