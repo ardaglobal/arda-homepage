@@ -40,10 +40,10 @@ const SFTSchrifted = localFont({
 
 export const metadata: Metadata = {
   title: "ARDA",
-  description: "Reprogramming Private Markets",
+  description: "Private Markets Reprogrammed",
   openGraph: {
     title: "ARDA",
-    description: "Reprogramming Private Markets",
+    description: "Private Markets Reprogrammed",
     images: [
       {
         url: "/arda-icon.jpg",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ARDA",
-    description: "Reprogramming Private Markets",
+    description: "Private Markets Reprogrammed",
     images: ["/arda-icon.jpg"],
   },
 };
