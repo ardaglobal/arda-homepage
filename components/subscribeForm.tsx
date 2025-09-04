@@ -26,11 +26,16 @@ export function SubscribeForm() {
             
             // Submit to Google Form in the background
             const formData = new FormData();
-            // You'll need to replace 'entry.XXXXXXXXX' with the actual entry ID from your Google Form
-            // To find this: Right-click on your Google Form → View Page Source → Search for "entry."
-            formData.append('entry.2000592701', email); // Replace with your actual entry ID
+            const entryId = process.env.NEXT_PUBLIC_GOOGLE_FORM_ENTRY_ID;
+            const formUrl = process.env.NEXT_PUBLIC_GOOGLE_FORM_URL;
             
-            await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdbXDWhJlT_1PRIwfj15ycqjbApzUy2znsmQk02TpIYrTgwqw/formResponse', {
+            if (!entryId || !formUrl) {
+                throw new Error('Google Form configuration is missing');
+            }
+            
+            formData.append(entryId, email);
+            
+            await fetch(formUrl, {
                 method: 'POST',
                 body: formData,
                 mode: 'no-cors' // Important: This prevents CORS errors with Google Forms

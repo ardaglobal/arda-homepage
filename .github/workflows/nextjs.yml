@@ -64,6 +64,8 @@ jobs:
         run: pnpm next build
         env:
           NODE_ENV: production
+          NEXT_PUBLIC_GOOGLE_FORM_ENTRY_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_FORM_ENTRY_ID }}
+          NEXT_PUBLIC_GOOGLE_FORM_URL: ${{ secrets.NEXT_PUBLIC_GOOGLE_FORM_URL }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
