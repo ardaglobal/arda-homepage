@@ -1,0 +1,69 @@
+name: Cleanup PR Preview
+
+on:
+  pull_request:
+    types: [closed]
+    branches: ["main"]
+
+permissions:
+  deployments: write
+  pull-requests: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete deployment environment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const environmentName = `preview-${{ github.event.number }}`;
+
+            try {
+              // Get all deployments for this environment
+              const { data: deployments } = await github.rest.repos.listDeployments({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                environment: environmentName,
+              });
+
+              // Set all deployments to inactive
+              for (const deployment of deployments) {
+                await github.rest.repos.createDeploymentStatus({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  deployment_id: deployment.id,
+                  state: 'inactive',
+                });
+              }
+
+              // Delete the environment
+              await github.rest.repos.deleteAnEnvironment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                environment_name: environmentName,
+              });
+
+              console.log(`Successfully cleaned up environment: ${environmentName}`);
+            } catch (error) {
+              console.log(`Error cleaning up environment: ${error.message}`);
+              // Don't fail the workflow if cleanup fails
+            }
+
+      - name: Comment on closed PR
+        if: github.event.pull_request.merged == true
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `✅ **PR merged successfully!**
+
+              🧹 Preview deployment has been cleaned up.
+              🚀 Changes are now live on the main site.
+
+              ---
+              *Preview environment \`preview-${{ github.event.number }}\` has been removed.*`
+            });

@@ -1,11 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  // Only use export mode and basePath for production builds
+  ...(process.env.NODE_ENV === "production" && {
+    output: "export",
+    basePath: "/arda-homepage",
+  }),
   images: {
     unoptimized: true,
   },
-  basePath: "/arda-homepage",
 };
 
 export default nextConfig;
