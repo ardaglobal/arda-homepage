@@ -30,7 +30,7 @@ export function SubscribeForm() {
             // To find this: Right-click on your Google Form → View Page Source → Search for "entry."
             formData.append('entry.2000592701', email); // Replace with your actual entry ID
             
-            const response = await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdbXDWhJlT_1PRIwfj15ycqjbApzUy2znsmQk02TpIYrTgwqw/formResponse', {
+            await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdbXDWhJlT_1PRIwfj15ycqjbApzUy2znsmQk02TpIYrTgwqw/formResponse', {
                 method: 'POST',
                 body: formData,
                 mode: 'no-cors' // Important: This prevents CORS errors with Google Forms
